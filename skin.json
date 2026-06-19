@@ -1,14 +1,12 @@
 {
     "name": "ShyzosTheme for Steam",
     "description": "Theme with a dark aesthetic and modular-inspired look, offering clarity, flexibility, and an enhanced user experience.",
-    "author": "SpaceEnergy",
+    "author": "Shyzuu",
     "github": {
         "owner": "Shyzuuu",
         "repo_name": "ShyzosTheme"
     },
-    "discord_support": { "inviteCodeExcludingLink": "7Zv8Xz3Vzn" },
     "tags": [ "WIP", "Modular", "Dark", "Customizable"],
-    "splash_image": "https://raw.githubusercontent.com/SpaceTheme/Steam/main/.github/assets/preview/preview.webp",
     "Conditions": {
         "Window Controls": {
             "description": "Hide the Window Controls (Minimize, Maximize, Close) from the titlebar",
@@ -221,7 +219,7 @@
             }
         },
         "System accent colors": {
-            "description": "Replaces the SpaceTheme accent colors with your system accent colors \n[i]Only works on Windows[/i]",
+            "description": "Replaces the theme accent colors with your system accent colors \n[i]Only works on Windows[/i]",
             "default": "no",
             "tab": "General",
             "section": "Other",
@@ -425,7 +423,7 @@
 
 
         "Steam-Custom-Artworks Support": {
-            "description": "The best support for [url=https://spacetheme.net/#steam-custom-artworks]https://spacetheme.net/#steam-custom-artworks[/url]",
+            "description": "Styling support for Steam custom artworks",
             "default": "no",
             "tab": "Library",
             "section": "Pinned",
