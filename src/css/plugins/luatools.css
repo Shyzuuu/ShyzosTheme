@@ -1,0 +1,256 @@
+/*
+& LuaTools (https://github.com/.../ltsteamplugin)
+* Plugin support for ShyzosTheme.
+* The plugin paints its UI with inline styles + a generated <style> using
+* !important and hardcoded colors. We win with !important (beats inline) and a
+* `html body` prefix (raises specificity above the plugin's single-class rules).
+* Result: LuaTools follows the theme accent/colors whatever plugin theme is set.
+*/
+
+/* Map the plugin's CSS variables to the theme (used by themes/<key>.css) */
+:root {
+    --lt-bg-primary: rgb(var(--st-color-1)) !important;
+    --lt-bg-secondary: rgb(var(--st-color-2)) !important;
+    --lt-bg-tertiary: rgba(var(--st-color-1), .95) !important;
+    --lt-bg-hover: rgba(var(--st-color-3), .95) !important;
+    --lt-bg-container: rgba(var(--st-color-1), .8) !important;
+    --lt-accent: rgb(var(--st-accent-1)) !important;
+    --lt-accent-light: rgb(var(--st-accent-2)) !important;
+    --lt-accent-dark: rgb(var(--st-accent-1)) !important;
+    --lt-border: rgba(var(--st-accent-1), .3) !important;
+    --lt-border-hover: rgba(var(--st-accent-1), .8) !important;
+    --lt-text: #fff !important;
+    --lt-text-secondary: #dcdedf !important;
+    --lt-gradient: linear-gradient(135deg, rgb(var(--st-accent-2)) 0%, rgb(var(--st-accent-1)) 100%) !important;
+    --lt-gradient-light: linear-gradient(135deg, rgb(var(--st-accent-2)) 0%, rgb(var(--st-accent-2)) 100%) !important;
+    --lt-shadow: rgba(var(--st-accent-1), .4) !important;
+    --lt-shadow-hover: rgba(var(--st-accent-1), .6) !important;
+    --lt-shadow-rgba: rgba(var(--st-accent-1), .3) !important;
+    --lt-rgb: var(--st-accent-1) !important;
+}
+
+
+
+/*
+! Overlay backdrop (the blurred full-screen layer behind every modal)
+*/
+html body div[class*="luatools-"][class*="overlay"] {
+    background: rgba(var(--st-background), .75) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+
+
+/*
+! Modal box (direct child div of an overlay)
+*/
+html body div[class*="luatools-"][class*="overlay"] > div {
+    border: 3px solid rgb(var(--st-color-5)) !important;
+    border-radius: var(--st-border-radius) !important;
+    background: rgb(var(--st-color-2)) !important;
+    box-shadow: 0px 4px 8px 0px rgba(var(--st-background), .5) !important;
+}
+
+
+
+/*
+! Title
+*/
+html body .luatools-title {
+    color: #fff !important;
+}
+/*^ Title icon */
+html body .luatools-title i {
+    color: rgb(var(--st-accent-2)) !important;
+}
+
+
+
+/*
+! API list items
+*/
+html body .luatools-api-item {
+    border: 1px solid rgba(var(--st-accent-1), .25) !important;
+    border-radius: var(--st-border-radius) !important;
+    background: rgba(var(--st-color-1), .5) !important;
+}
+html body .luatools-api-name,
+html body .luatools-api-status {
+    color: #dcdedf !important;
+}
+
+
+
+/*
+! Progress bar
+*/
+html body .luatools-progress-wrap {
+    border: 1px solid rgba(var(--st-accent-1), .35) !important;
+    border-radius: var(--st-border-radius) !important;
+    background: rgba(var(--st-background), .4) !important;
+}
+html body .luatools-progress-bar {
+    background: linear-gradient(135deg, rgb(var(--st-accent-2)), rgb(var(--st-accent-1))) !important;
+    box-shadow: 0 0 10px rgba(var(--st-accent-1), .5) !important;
+}
+
+
+
+/*
+! Buttons
+*/
+html body .luatools-btn {
+    border: 2px solid rgba(var(--st-accent-1), .4) !important;
+    border-radius: var(--st-border-radius) !important;
+    background: rgb(var(--st-color-1)) !important;
+    color: #fff !important;
+    box-shadow: 0px 4px 8px 0px rgba(var(--st-background), .5) !important;
+}
+html body .luatools-btn:hover:not([data-disabled="1"]) {
+    background: rgb(var(--st-color-3)) !important;
+    border-color: rgba(var(--st-accent-1), .8) !important;
+}
+
+/*^ Primary button */
+html body .luatools-btn.primary {
+    border-color: rgba(var(--st-accent-1), .8) !important;
+    background: linear-gradient(135deg, rgb(var(--st-accent-2)), rgb(var(--st-accent-1))) !important;
+    color: #fff !important;
+}
+html body .luatools-btn.primary:hover:not([data-disabled="1"]) {
+    background: linear-gradient(135deg, rgb(var(--st-accent-2)), rgb(var(--st-accent-2))) !important;
+}
+
+/*^ Cancel button (red accent) */
+html body .luatools-cancel-btn {
+    border-color: rgba(var(--st-red), .5) !important;
+    background: rgba(var(--st-red), .15) !important;
+    color: rgb(var(--st-red-hover)) !important;
+}
+html body .luatools-cancel-btn:hover:not([data-disabled="1"]) {
+    background: rgba(var(--st-red), .3) !important;
+    border-color: rgb(var(--st-red)) !important;
+}
+
+
+
+/*
+! Store header button
+*/
+html body button.luatools-header-button {
+    border: 2px solid rgba(var(--st-accent-1), .4) !important;
+    border-radius: var(--st-border-radius) !important;
+    background: rgb(var(--st-color-2)) !important;
+    color: #fff !important;
+    box-shadow: 0px 4px 8px 0px rgba(var(--st-background), .5) !important;
+}
+html body button.luatools-header-button:hover {
+    background: rgb(var(--st-color-3)) !important;
+    border-color: rgba(var(--st-accent-1), .8) !important;
+}
+html body button.luatools-header-button:focus-visible {
+    outline: 2px solid rgb(var(--st-accent-1)) !important;
+}
+
+
+
+/*
+! Toggle switch
+*/
+html body input:checked + .luatools-slider {
+    background-color: rgb(var(--st-accent-1)) !important;
+    border-color: rgb(var(--st-accent-1)) !important;
+}
+html body .luatools-slider:hover {
+    border-color: rgb(var(--st-accent-2)) !important;
+}
+
+
+
+/*
+! Select inputs
+*/
+html body div[class*="luatools-"][class*="overlay"] select {
+    border: 1px solid rgba(var(--st-accent-1), .3) !important;
+    border-radius: var(--st-border-radius) !important;
+    background-color: rgb(var(--st-color-1)) !important;
+    color: #fff !important;
+}
+html body div[class*="luatools-"][class*="overlay"] select:hover {
+    border-color: rgba(var(--st-accent-1), .8) !important;
+}
+html body div[class*="luatools-"][class*="overlay"] select:focus {
+    border-color: rgb(var(--st-accent-1)) !important;
+    box-shadow: 0 0 0 2px rgba(var(--st-accent-1), .3) !important;
+}
+html body div[class*="luatools-"][class*="overlay"] select option {
+    background-color: rgb(var(--st-color-1)) !important;
+    color: #fff !important;
+}
+html body div[class*="luatools-"][class*="overlay"] select option:checked {
+    background: rgb(var(--st-accent-1)) !important;
+    color: #fff !important;
+}
+
+
+
+/*
+& Icons
+* The plugin renders its icons with Font Awesome (loaded from a CDN), which
+* shows as empty boxes under this theme. We never use Font Awesome here, so we
+* remap every Font Awesome icon the plugin uses onto the theme's bundled
+* FluentSystemIcons-Filled glyphs. This drops the CDN dependency and keeps the
+* icons consistent with the rest of ShyzosTheme.
+*/
+
+/* Force the Fluent icon font on every plugin Font Awesome icon */
+html body [class*="luatools-"] i[class*="fa-"],
+html body [class*="luatools-"] i[class*="fa-"]::before {
+    font-family: "FluentSystemIcons-Filled" !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glyph remap (Font Awesome class -> Fluent codepoint) */
+html body [class*="luatools-"] i.fa-cloud-arrow-down::before { content: "\e3a3" !important; }
+html body [class*="luatools-"] i.fa-xmark::before { content: "\f36a" !important; }
+html body [class*="luatools-"] i.fa-circle-xmark::before { content: "\f36e" !important; }
+html body [class*="luatools-"] i.fa-check::before { content: "\f295" !important; }
+html body [class*="luatools-"] i.fa-circle-check::before { content: "\f299" !important; }
+html body [class*="luatools-"] i.fa-spinner::before { content: "\f712" !important; }
+html body [class*="luatools-"] i.fa-gear::before { content: "\f6b3" !important; }
+html body [class*="luatools-"] i.fa-clock::before { content: "\f2de" !important; }
+html body [class*="luatools-"] i.fa-wrench::before { content: "\f8d9" !important; }
+html body [class*="luatools-"] i.fa-info-circle::before,
+html body [class*="luatools-"] i.fa-circle-info::before { content: "\f4ab" !important; }
+html body [class*="luatools-"] i.fa-circle-question::before { content: "\f648" !important; }
+html body [class*="luatools-"] i.fa-exclamation-triangle::before,
+html body [class*="luatools-"] i.fa-triangle-exclamation::before { content: "\f882" !important; }
+html body [class*="luatools-"] i.fa-trash::before,
+html body [class*="luatools-"] i.fa-trash-can::before { content: "\f34d" !important; }
+html body [class*="luatools-"] i.fa-discord::before { content: "\f287" !important; }
+html body [class*="luatools-"] i.fa-server::before { content: "\f784" !important; }
+html body [class*="luatools-"] i.fa-chevron-right::before { content: "\f2b1" !important; }
+html body [class*="luatools-"] i.fa-chevron-left::before { content: "\f2ab" !important; }
+html body [class*="luatools-"] i.fa-arrow-left::before { content: "\f15c" !important; }
+html body [class*="luatools-"] i.fa-arrow-rotate-right::before { content: "\f13e" !important; }
+html body [class*="luatools-"] i.fa-user::before { content: "\f5c8" !important; }
+html body [class*="luatools-"] i.fa-plus::before { content: "\f10a" !important; }
+html body [class*="luatools-"] i.fa-minus::before { content: "\ebcb" !important; }
+html body [class*="luatools-"] i.fa-plug::before { content: "\e9ac" !important; }
+html body [class*="luatools-"] i.fa-pen-to-square::before { content: "\f3dd" !important; }
+html body [class*="luatools-"] i.fa-magnifying-glass::before { content: "\f69a" !important; }
+html body [class*="luatools-"] i.fa-layer-group::before { content: "\f4d6" !important; }
+html body [class*="luatools-"] i.fa-grip-vertical::before { content: "\ea01" !important; }
+html body [class*="luatools-"] i.fa-globe::before { content: "\f45f" !important; }
+html body [class*="luatools-"] i.fa-folder::before { content: "\f41d" !important; }
+html body [class*="luatools-"] i.fa-floppy-disk::before { content: "\f68a" !important; }
+html body [class*="luatools-"] i.fa-file-code::before { content: "\f379" !important; }
+html body [class*="luatools-"] i.fa-code-branch::before { content: "\f1fb" !important; }
+html body [class*="luatools-"] i.fa-code::before { content: "\f2f0" !important; }
+html body [class*="luatools-"] i.fa-chart-pie::before { content: "\f345" !important; }
+html body [class*="luatools-"] i.fa-calendar-days::before { content: "\e265" !important; }
