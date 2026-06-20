@@ -129,7 +129,7 @@
     -webkit-font-smoothing: antialiased;
     color: #9c9c9c;
 }
-._1Y8hK5A-ASv-Y5SGGb5Em5:not(.padding-bottom-none) .BVtL0_ttO-7ESEyO67g3w::before:hover {
+._1Y8hK5A-ASv-Y5SGGb5Em5:not(.padding-bottom-none):hover .BVtL0_ttO-7ESEyO67g3w::before {
     color: #fff;
 }
 

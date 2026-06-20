@@ -418,6 +418,7 @@ html body.v6 .StoreMenuLoadingPlaceholder .PlaceholderInner {
 .h2B3SGR_w4RWdrnsRZEcD ._16jZ3HEbtaJTl80pQINN2Y ._2GxMhpm7OC2WWXN_wjgA78 ._1XK1v4pD2FgxJn9Nxovpup ._2tdhUFMMsjGr_BI7uMcoWy,
 .gQWgnAxVrOM- .qxuaSNtrNvE- .ZaHNigq8DMs- .sGePe4nq0rw- ._8A-51zo2cfU-  {
     box-sizing: border-box;
+    position: relative;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -501,10 +502,11 @@ html body.v6 .StoreMenuLoadingPlaceholder .PlaceholderInner {
 }
 /* Game amount */
 .h2B3SGR_w4RWdrnsRZEcD ._16jZ3HEbtaJTl80pQINN2Y ._2GxMhpm7OC2WWXN_wjgA78 ._1XK1v4pD2FgxJn9Nxovpup ._2tdhUFMMsjGr_BI7uMcoWy:has(._1fWW6CwAeZNAqI9Fp0Mvpr) ._3OXIIlPZdEJ8toS6in8CcY,
-.gQWgnAxVrOM- .qxuaSNtrNvE- .ZaHNigq8DMs- .sGePe4nq0rw- ._8A-51zo2cfU-:has(.x4GRbYkhX14-) .c3yndQJfQ38- /*! Fix me */  {
+.gQWgnAxVrOM- .qxuaSNtrNvE- .ZaHNigq8DMs- .sGePe4nq0rw- ._8A-51zo2cfU-:has(.x4GRbYkhX14-) .c3yndQJfQ38-  {
     position: absolute;
     top: 28px;
     left: 52px;
+    pointer-events: none;
 }
 
 

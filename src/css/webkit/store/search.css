@@ -379,7 +379,6 @@
 /** Content */
 .search_page #search_result_container .search_result_row .responsive_search_name_combined {
     grid-template-rows: auto 1fr;
-    grid-template-columns: 0;
     grid-template-areas:
         "title title title platforms"
         "reviews release price price";
