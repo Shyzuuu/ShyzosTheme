@@ -40,6 +40,142 @@ Then open Millennium settings, select **ShyzosTheme**, and fully restart Steam.
 
 - Some things only work properly when Steam is maximized on a 1920x1080 (or higher) monitor.
 
+## Roadmap
+
+### ShyzosTheme additions
+- [x] Rebrand to ShyzosTheme (titlebar + name)
+- [x] LuaTools plugin support (Font Awesome icons remapped to FluentSystemIcons)
+- [x] Light purple accent (replaces the default blurple)
+- [x] Self-hosted install/update script (`install.ps1`)
+- [x] Store search tag click fix + assorted CSS bug fixes
+- [ ] Custom logo / splash image
+- [ ] Custom profile background support (own Steam profile)
+- [ ] Submit to the Millennium store (for 1-click install + native auto-update)
+
+### Inherited from SpaceTheme
+<details>
+  <summary>Store</summary>
+
+  - [ ] Home
+  - [ ] (WIP) Navbar
+  - [ ] Discovery
+  - [ ] (WIP) Pointshop
+  - [ ] Charts
+  - [ ] (WIP) Gamepage
+  - [ ] Bundle info
+  - [ ] Hardware page
+  - [ ] The Steam Awards page
+  - [ ] Steam Replay page
+  - [ ] Steam Labs page
+  - [ ] Tags page
+  - [ ] Community recommends page
+  - [ ] Interactive recommender page
+  - [ ] Among friends page
+  - [ ] Steam curators page
+  - [ ] Gift cards page
+  - [x] Cart
+  - [ ] Wishlist rework
+  - [ ] (WIP) Checkout
+  - [ ] Categories page
+  - [ ] Personal calendar
+  - [x] Search result list page
+  - [ ] Settings
+</details>
+<details>
+  <summary>Library</summary>
+
+  - [ ] (WIP) Collection page
+  - [ ] Gamepage rework
+</details>
+<details>
+  <summary>Community</summary>
+
+  - [ ] Home
+  - [ ] Gamepage
+    - [ ] Screenshots
+    - [ ] Artworks
+    - [ ] Guides
+    - [ ] News
+    - [ ] Reviews
+    - [ ] Videos
+    - [ ] Workshop
+      - [ ] Item page
+  - [ ] Discussions
+  - [ ] Workshop
+  - [ ] Market
+    - [ ] Home
+    - [ ] Item page
+  - [ ] Broadcast
+</details>
+<details>
+  <summary>User</summary>
+
+  - [ ] Profile
+  - [ ] Activity
+  - [ ] Friends
+  - [ ] Content (User's screenshots/artworks/videos/...)
+  - [x] Awards
+  - [ ] (WIP) Badges
+  - [ ] Inventory
+  - [ ] Booster Pack Creator
+</details>
+<details>
+  <summary>Friends & Chat</summary>
+
+  - [x] Compact mode support
+  - [ ] Chat
+  - [ ] Group chat
+</details>
+<details>
+  <summary>Big Picture Mode</summary>
+
+  - [ ] Home
+  - [ ] Sidebar
+  - [ ] Gamepage
+  - [ ] Library
+  - [ ] Store
+  - [ ] Friends & Chat
+  - [ ] Media
+  - [ ] Downloads
+  - [ ] Settings
+</details>
+<details>
+  <summary>Overlay</summary>
+
+  - [ ] Game Overview
+  - [ ] Achievements
+  - [ ] Notes
+  - [ ] Clock
+  - [ ] Guides
+  - [ ] Discussions
+  - [ ] Recordings & Screenshots
+  - [ ] Browser
+  - [ ] Controller Settings
+</details>
+<details>
+  <summary>Other</summary>
+
+  - [ ] (WIP) Notifications
+  - [ ] (WIP) Steam Settings
+  - [ ] (WIP) Inputs
+    - [ ] (WIP) Button
+    - [ ] Dropdown
+    - [ ] Search
+    - [ ] (WIP) Color
+    - [x] Emoji picker
+    - [ ] Checkbox
+      - [x] Checkbox Switch
+    - [ ] (WIP) Radio
+    - [x] Radiogroup
+    - [ ] (WIP) Range
+  - [ ] Recordings & Screenshots
+  - [x] Special Offers
+  - [ ] Game server window
+  - [ ] Players window
+  - [ ] Add non-steam game window
+  - [x] About Steam window
+</details>
+
 ## Credits
 
 ShyzosTheme is a fork of [SpaceTheme](https://github.com/SpaceTheme/Steam) by SpaceEnergy,
