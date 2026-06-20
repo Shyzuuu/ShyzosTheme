@@ -242,6 +242,22 @@ body .DialogBody .eKmEXJCm_lgme24Fp_HWt ._2tALpM7z8naXJ35Pp5fNAG ._1W1to_azoBRG9
 & App/Steam Close Window
 */
 /*
+! Sizing — fit the content so the action buttons aren't pushed below a scrollbar
+*/
+body:has(._2Se5JD_UkWeIyaZiXXmxDD) .DialogContent._DialogLayout {
+    min-height: unset !important;
+    max-height: unset !important;
+}
+body:has(._2Se5JD_UkWeIyaZiXXmxDD) .DialogContent_InnerWidth {
+    height: auto !important;
+}
+body:has(._2Se5JD_UkWeIyaZiXXmxDD) .DialogBody {
+    overflow: visible !important;
+    -webkit-mask-image: none !important;
+}
+
+
+/*
 ! Text
 */
 body.DialogContent_InnerWidth ._2Se5JD_UkWeIyaZiXXmxDD .DialogBodyText {
