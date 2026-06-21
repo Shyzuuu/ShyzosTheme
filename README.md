@@ -38,7 +38,7 @@ Then open Millennium settings, select **ShyzosTheme**, and fully restart Steam.
 
 ## Info
 
-- Some things only work properly when Steam is maximized on a 1920x1080 (or higher) monitor.
+- Designed for 1920x1080 (or higher). The store now also works in a non-maximized window; a few inherited SpaceTheme pages may still look best maximized.
 
 ## Roadmap
 
@@ -48,6 +48,7 @@ Then open Millennium settings, select **ShyzosTheme**, and fully restart Steam.
 - [x] Light purple accent (replaces the default blurple)
 - [x] Self-hosted install/update script (`install.ps1`)
 - [x] Store search tag click fix + assorted CSS bug fixes
+- [x] Responsive layout fix for non-maximized windows (store search filters no longer drop below results; game/bundle columns and footer no longer overflow)
 - [ ] Custom logo / splash image
 - [ ] Custom profile background support (own Steam profile)
 - [ ] Submit to the Millennium store (for 1-click install + native auto-update)

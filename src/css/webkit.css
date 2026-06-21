@@ -101,7 +101,11 @@ body .page_content_ctn:has(._2Mj4nu3kK3ic2TFv5uwGTw._3kunV-qalJTBLAvNB9lUDg) {
 
 
 body.v6 .leftcol {
-    width: calc(var(--st-store-max-width) - 372px - 16px) !important;
+    /* Fill the actual available width minus the fixed 372px sidebar + 16px gap.
+       Using --st-store-max-width here hardcoded the column to the maximized
+       width, so on a smaller (non-maximized) window the two floats no longer
+       fit side by side and the sidebar dropped below the results. */
+    width: calc(100% - 372px - 16px) !important;
 }
 
 body.v6 .rightcol {
@@ -987,9 +991,17 @@ body.responsive_page .profile_small_header_bg .profile_small_header_additional .
 & Footer
 */
 html body.responsive_page #footer {
-    width: var(--st-store-max-width);
+    /* width:var(--st-store-max-width) hardcoded the footer to the maximized
+       width, overflowing (horizontal scrollbar) on a smaller window. Cap it
+       instead, and wrap the link columns so they reflow when space is tight. */
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--st-store-max-width);
     margin: 0 auto 16px;
     padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
     border-radius: var(--st-border-radius);
     background-color: rgb(var(--st-color-2));
 }
